@@ -1,10 +1,18 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Layout from './Layout'
 
 function App() {
 
   return (
-    <Navbar/>
+    <BrowserRouter basename='/'>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route path='/' element={<div>Hello</div>}/>
+          <Route path='/test' element={<div>test</div>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
